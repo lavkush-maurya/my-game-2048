@@ -10,17 +10,44 @@
   padding: 0;
   box-sizing: border-box;
 }
-@media (max-width: 767px) {
-  /* Styles for mobile devices  */
+@media (max-width: 570px) {
   .board {
-    width: 250px;
-    height: 250px;
+    width: 250px !important;
+    height: 250px !important;
   }
+
   .tile {
-    width: 50px;
-    height: 50px;
+    width: 50px !important;
+    height: 50px !important;
   }
 }
+
+.board {
+  position: relative;
+  align-self: center !important;
+  background-color: #bbada0;
+  width: 450px;
+  height: 450px;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.tile {
+  width: 100px;
+  height: 100px;
+  background-color: #cdc1b4;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.3rem;
+  font-weight: 700;
+}
+
 .game {
   display: flex;
   flex-direction: column;
@@ -54,19 +81,6 @@
   align-items: center;
   font-size: 1.2rem;
   border-radius: 8px;
-}
-
-.board {
-  position: relative;
-  background-color: #bbada0;
-  width: 450px;
-  height: 450px;
-  border-radius: 8px;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  overflow: hidden;
 }
 
 .message {
@@ -111,18 +125,6 @@
 .row {
   display: flex;
   gap: 10px;
-}
-
-.tile {
-  width: 100px;
-  height: 100px;
-  background-color: #cdc1b4;
-  border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2.3rem;
-  font-weight: 700;
 }
 
 .button {

@@ -1,6 +1,6 @@
 "use client";
 import Navbar from "@/components/Navbar";
-import { Flex, Text } from "@chakra-ui/react";
+import { Button, Container, Flex, Link, Text } from "@chakra-ui/react";
 import React from "react";
 
 const About = () => {
@@ -32,6 +32,18 @@ const About = () => {
           how far you can slide and merge your way to victory!
         </Text>
       </Flex>
+      <Container textAlign={"center"} mt={"10"}>
+        <Text color="orange.600"> See My Other Projects </Text>
+        <Button colorScheme="orange" variant={"outline"}>
+          <a
+            href="https://lavkushgatsby.netlify.app/projects/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Link
+          </a>
+        </Button>
+      </Container>
     </div>
   );
 };
