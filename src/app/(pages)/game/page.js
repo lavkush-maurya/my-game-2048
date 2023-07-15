@@ -7,6 +7,7 @@ import handleKeyDown from "@/functions/handleKeyDown";
 import isGameOver from "@/functions/isGameOver";
 import generateNewNumber from "@/functions/generateNewNumber";
 import Navbar from "@/components/Navbar";
+// import MobilePlay from "@/components/MobilePlay";
 
 function Game() {
   const [Board, setBoard] = useState([
@@ -58,7 +59,7 @@ function Game() {
   return (
     <>
       <Navbar />
-
+      {/* <MobilePlay /> */}
       <div className="game">
         <div className="game-container">
           <TitleAndScore Score={Score} />
@@ -71,6 +72,7 @@ function Game() {
             score={Score}
             newGameButtonHandler={newGame}
           />
+
           <p className="htp">
             <span>How to play:</span> Use your arrow keys to move the tiles.
             Tiles with the same number merge into one when they touch. Add them
