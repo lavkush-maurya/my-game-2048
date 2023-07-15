@@ -15,10 +15,19 @@
     width: 250px !important;
     height: 250px !important;
   }
-
+  .htp {
+    width: 375px !important;
+  }
   .tile {
     width: 50px !important;
     height: 50px !important;
+  }
+  .header {
+    flex-direction: column !important;
+  }
+  .button-ng {
+    align-self: center !important;
+    margin-top: 15px !important;
   }
 }
 
