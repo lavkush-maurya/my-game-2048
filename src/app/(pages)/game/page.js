@@ -79,14 +79,52 @@ function Game() {
           <button className="button button-ng" onClick={newGame}>
             New Game
           </button>
-          <BoardComponent
-            boardState={Board}
-            gameOverState={GameOver}
-            score={Score}
-            newGameButtonHandler={newGame}
-          />
-          {/* mobile view */}
           {isMobile ? (
+            <Button margin={"0 20px"} onClick={() => handleButtonClick("up")}>
+              Up
+            </Button>
+          ) : (
+            ""
+          )}
+          <Flex alignItems={"center"}>
+            {isMobile ? (
+              <Button
+                height={"200px"}
+                onClick={() => handleButtonClick("left")}
+              >
+                Left
+              </Button>
+            ) : (
+              ""
+            )}
+            <BoardComponent
+              boardState={Board}
+              gameOverState={GameOver}
+              score={Score}
+              newGameButtonHandler={newGame}
+            />
+            {isMobile ? (
+              <Button
+                height={"200px"}
+                onClick={() => handleButtonClick("right")}
+              >
+                Right
+              </Button>
+            ) : (
+              ""
+            )}
+          </Flex>
+
+          {isMobile ? (
+            <Button margin={"0 20px"} onClick={() => handleButtonClick("down")}>
+              Down
+            </Button>
+          ) : (
+            ""
+          )}
+
+          {/* mobile view */}
+          {/* {isMobile ? (
             <Flex marginTop="20px" justifyContent={"space-evenly"}>
               <Button
                 marginRight="10px"
@@ -110,7 +148,7 @@ function Game() {
             </Flex>
           ) : (
             ""
-          )}
+          )} */}
           {/* mobile view */}
 
           <p className="htp">

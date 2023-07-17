@@ -34,7 +34,7 @@
 .board {
   position: relative;
   align-self: center !important;
-  background-color: #bbada0;
+  background-color: sandybrown;
   width: 450px;
   height: 450px;
   border-radius: 8px;
@@ -79,11 +79,11 @@
 
 .title {
   font-size: 5rem;
-  color: #bbada0;
+  color: sandybrown;
 }
 
 .score {
-  background-color: #bbada0;
+  background-color: sandybrown;
   min-width: 20%;
   display: flex;
   flex-direction: column;
@@ -137,7 +137,7 @@
 }
 
 .button {
-  background-color: #8f7a66;
+  background-color: sandybrown;
   padding: 0.75rem 1.25rem;
   font-weight: 700;
   font-size: 1.15rem;
