@@ -155,4 +155,45 @@ const handleKeyDown = (e, Board, setBoard, Score, setScore, setGameOver) => {
   }
 };
 
+export const handleMobileKeyDown = (
+  direction,
+  Board,
+  setBoard,
+  Score,
+  setScore,
+  setGameOver
+) => {
+  let newBoard = Board;
+  switch (direction) {
+    case "up":
+      newBoard = rotateAndCombine(
+        Board,
+        direction,
+        Score,
+        setScore,
+        setGameOver
+      );
+      break;
+    case "down":
+      newBoard = rotateAndCombine(
+        Board,
+        direction,
+        Score,
+        setScore,
+        setGameOver
+      );
+      break;
+    case "right":
+      newBoard = combineNumbers(Board, direction, Score, setScore, setGameOver);
+      break;
+    case "left":
+      newBoard = combineNumbers(Board, direction, Score, setScore, setGameOver);
+      break;
+  }
+  if (boardHasMoved(Board, newBoard)) {
+    generateNewNumber(newBoard);
+    setBoard(newBoard);
+  }
+};
+
 export default handleKeyDown;

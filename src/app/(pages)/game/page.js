@@ -4,12 +4,27 @@ import { useState, useEffect } from "react";
 import TitleAndScore from "@/components/TitleAndScore";
 import BoardComponent from "@/components/Board";
 import handleKeyDown from "@/functions/handleKeyDown";
+import { handleMobileKeyDown } from "@/functions/handleKeyDown";
 import isGameOver from "@/functions/isGameOver";
 import generateNewNumber from "@/functions/generateNewNumber";
 import Navbar from "@/components/Navbar";
-// import MobilePlay from "@/components/MobilePlay";
+import { Button, Flex, useMediaQuery } from "@chakra-ui/react";
 
 function Game() {
+  //mobile view
+  const [isMobile] = useMediaQuery("(max-width:  768px)");
+  const handleButtonClick = (direction) => {
+    handleMobileKeyDown(
+      direction,
+      Board,
+      setBoard,
+      Score,
+      setScore,
+      setGameOver
+    );
+  };
+  //mobile view
+
   const [Board, setBoard] = useState([
     [0, 0, 0, 0],
     [0, 0, 0, 0],
@@ -21,8 +36,6 @@ function Game() {
     message: "Game Over",
   });
   const [Score, setScore] = useState(0);
-
-  // this function and useEffect cleans the previous keydown listener and adds a new one
   const keyDownHandlerFunction = (e) => {
     handleKeyDown(e, Board, setBoard, Score, setScore, setGameOver);
   };
@@ -59,7 +72,7 @@ function Game() {
   return (
     <>
       <Navbar />
-      {/* <MobilePlay /> */}
+
       <div className="game">
         <div className="game-container">
           <TitleAndScore Score={Score} />
@@ -72,6 +85,33 @@ function Game() {
             score={Score}
             newGameButtonHandler={newGame}
           />
+          {/* mobile view */}
+          {isMobile ? (
+            <Flex marginTop="20px" justifyContent={"space-evenly"}>
+              <Button
+                marginRight="10px"
+                onClick={() => handleButtonClick("up")}
+              >
+                Up
+              </Button>
+              <Button
+                marginRight="10px"
+                onClick={() => handleButtonClick("right")}
+              >
+                Right
+              </Button>
+              <Button
+                marginRight="10px"
+                onClick={() => handleButtonClick("down")}
+              >
+                Down
+              </Button>
+              <Button onClick={() => handleButtonClick("left")}>Left</Button>
+            </Flex>
+          ) : (
+            ""
+          )}
+          {/* mobile view */}
 
           <p className="htp">
             <span>How to play:</span> Use your arrow keys to move the tiles.
